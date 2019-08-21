@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 
 const BottomRow = () => {
+
+    const [quarter, changeQuarter] = useState(1);
+
+    // Randomly Change Quarter Button
+    const QuarterButtonHandler = () => {
+        let min = Math.ceil(1);
+        let max = Math.floor(5);
+        let randNum = Math.floor(Math.random() * (max - min) + min);
+
+        changeQuarter(randNum)
+    };
+
   return (
     <div className="bottomRow">
       <div className="down">
@@ -18,7 +30,8 @@ const BottomRow = () => {
       </div>
       <div className="quarter">
         <h3 className="quarter__title">Quarter</h3>
-        <div className="quarter__value">4</div>
+        <div className="quarter__value">{quarter}</div>
+          <button className="quarterButton" onClick={QuarterButtonHandler}>Quarter</button>
       </div>
     </div>
   );
