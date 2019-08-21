@@ -3,6 +3,7 @@ import "./App.css";
 
 const BottomRow = () => {
 
+    // Quarter State
     const [quarter, changeQuarter] = useState(1);
 
     // Randomly Change Quarter Button
